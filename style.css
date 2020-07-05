@@ -26,12 +26,28 @@ body {
   padding: 20px;
 }
 
+h1,
+p {
+  transform: translatex(-60%);
+  opacity: 0;
+
+  animation: appear 1s ease-in forwards;
+}
+
 h1 {
   color: var(--green);
+  text-align: center;
 }
 
 p {
   text-align: center;
+}
+
+.container {
+  transform: translatex(60%);
+  opacity: 0;
+
+  animation: appear 1s ease-in forwards;
 }
 
 .btn {
@@ -45,8 +61,14 @@ p {
   padding: 5px 15px;
 }
 
+.btn:hover {
+  background-color: #417a6e;
+}
+
 .money-img {
   max-width: 150px;
+
+  animation: spin 20s linear infinite 1.3s;
 }
 
 .currency {
@@ -96,6 +118,19 @@ select:focus,
 input:focus,
 button:focus {
   outline: 0;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes appear {
+  100% {
+    transform: translatex(0);
+    opacity: 1;
+  }
 }
 
 @media (max-width: 600px) {
